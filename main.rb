@@ -1,8 +1,7 @@
 require 'xmlsimple'
 
 def kill_processes
-  xml =  `sudo passenger --show = xml`
-  get_long_running_pids(xml).each do |pid| 
+  get_long_running_pids("xml-out").each do |pid| 
     `kill -9 #{pid}`
   end
   puts 'done'
